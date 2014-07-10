@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li {% if page_name == "swapps" %}class="active"{% endif %}><a href="/admin/swapps">Swapps</a></li>
+        <li {% if page_name == "approvals" %}class="active"{% endif %}><a href="/admin/approvals">Approvals</a></li>
+      </ul>
+    </div>
+    <div class="col-md-10">
+      <div class="well">
+        {% include 'admin/' + page_name + '.html' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock%}

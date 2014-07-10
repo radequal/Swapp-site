@@ -1,0 +1,88 @@
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="brand" href="/">
+        <img src="/static/img/imagineurl-logo.png"/>
+      </a>
+
+      <div class="nav-collapse collapse" role="navigation">
+        <ul class="nav">
+          <li{% if nav_tab_location == "home" %} class="active"{% endif %}>
+            <a href="/"><i class="icon-home"></i> Home</a>
+          </li>
+          {% if user %}
+          <li{% if nav_tab_location == "myfiles" %} class="active"{% endif %}>
+            <a href="/myfiles"><i class="icon-file"></i> My files</a>
+          </li>
+          {% endif %}
+          {% if 4==5 %}
+          <li{% if nav_tab_location == "discover" %} class="active"{% endif %}>
+            <a href="/discover"><i>#</i> Discover</a>
+          </li>
+          {% endif %}
+        </ul><!-- /.nav -->
+      </div><!-- /.nav-collapse -->
+
+      <div class="right-side-nav">
+        <ul class="nav visible-desktop pull-right">
+
+          {% if user %}
+          <li class="dropdown">
+            <button class="btn btn-small" data-toggle="dropdown"><i class="icon-cog"></i></button>
+            <ul class="dropdown-menu">
+              <li class="nav-header">User options</li>
+              {% if user.user_type == "superadmin" %}<li><a href="/admin">Admin</a></li>{% endif %}
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+              <li class="divider"></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li>
+            <button type="button" data-toggle="modal" data-target="#LogIn" class="btn btn-small"><i class="icon-user"></i></button>
+            </li>
+          {% endif %}
+
+
+          <li>
+            <a class="btn btn-info nav-bar hidden-desktop" data-toggle="collapse" data-target=".signin-collapse">
+              <i class="icon-user icon-white"></i>
+            </a>
+          </li>
+
+        </ul><!-- /.nav .pull-right -->
+      </div><!-- /.right-side-nav -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar-inner -->
+</div><!-- /.navbar -->
+
+
+
+
+<!-- login mobile (collapse) -->
+<div class="nav-collapse collapse signin-collapse hidden-desktop">
+  {% include "auth/engineauth_form.html" %}
+</div>
+
+<!-- login desktop (modal) -->
+<div class="modal hide fade" id="LogIn">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Login with Facebook</h3>
+  </div>
+  <div class="modal-body">
+    {% include "auth/engineauth_form.html" %}
+  </div>
+  <div class="modal-footer">
+    <!-- <a href="#" class="btn btn-primary" data-dismiss="modal">Cancel</a> -->
+  </div>
+</div>
+

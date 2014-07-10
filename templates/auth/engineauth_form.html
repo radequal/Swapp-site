@@ -1,0 +1,18 @@
+{% set providers = [
+  ('facebook', '/auth/facebook'),
+] -%}
+
+<div class="row-fluid">
+  {% include "partials/messages.html" %}
+  <div class="span12">
+    <div class="row-fluid">
+      {% for p, u in providers %}
+        <div class="span6 offset3 well pager">
+          <a href="{{ u }}" class="text-center" style="display: block; height: 100%; width: 100%;">
+            <img src="/static/img/social/{{ p }}.png" />
+          </a>
+        </div><!-- /.well -->
+      {% endfor %}
+    </div><!-- /.row-fluid -->
+  </div>
+</div>

@@ -1,0 +1,88 @@
+body.home {
+	background: url('/static/img/calm-bg.jpg') top center no-repeat;
+}
+
+#codewrapper {
+	position: relative;
+}
+#copied {
+	position: absolute;
+	background-color: rgba(255, 255, 0, 0.46);
+}
+
+.logo {
+	width: auto;
+	height: auto;
+	margin: -8px 7px 0px 0px;
+}
+
+.notifications {
+	margin: 0 10px;
+}
+.notifications .label {
+	height: 34px;
+	display: block;
+}
+.notifications .glyphicon {
+	font-size: 20px;
+	margin: 3px 2px 0 2px;
+}
+
+.swappotron {
+	margin-bottom: 30px;
+}
+.swapp-message {
+	height: 330px;
+}
+.compatible-phones {
+	position: absolute;
+	top: 400px;
+}
+
+ul.platforms-icons {
+
+}
+
+ul.platforms-icons li {
+	float: left;
+	margin-right: 42px;
+	background: url('/static/img/platform-icons.png');
+	display: block;
+	height: 100px;
+	width: 60px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.72);
+	font-size: 10px;
+}
+ul.platforms-icons li.iphone {
+	background-position: 62px 0px;
+	height: 98px;
+}
+ul.platforms-icons li.blackberry {
+	background-position: 0px 0px;
+}
+ul.platforms-icons li.symbian {
+	background-position: -58px 4px;
+}
+ul.platforms-icons li.windows {
+	background-position: -60px -96px;
+}
+ul.platforms-icons li.bada {
+	background-position: 0px -99px;
+	height: 95px;
+}
+ul.platforms-icons li a {
+	display: block;
+	height: inherit;
+	width: inherit;
+}
+ul.platforms-icons li span {
+	margin-top: 9px;
+	display: block;
+}
+
+.map-placeholder {
+	background: red;
+	height: 170px;
+	width: 100%;
+}

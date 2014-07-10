@@ -1,0 +1,21 @@
+    <header id="navbar-top"  class="banner navbar navbar-default"   role="banner">
+    	<div class="container">
+	      <div class="navbar-header">
+	        <a class="navbar-brand" href="/">
+	        	<img class="pull-left logo" src="/static/img/logo-header.png" alt="Swapp">
+	        </a>
+	      </div>
+	      <div class="pull-right">
+	      	<ul class="nav navbar-nav">
+	      		<li {% if nav_tab_location == "home" %}class="active"{% endif %}><a href="/">Home</a></li>
+	      		<li {% if nav_tab_location == "download" %}class="active"{% endif %}><a href="/p/download">Download</a></li>
+	      		<li {% if nav_tab_location == "faqs" %}class="active"{% endif %}><a href="/p/faqs">FAQs</a></li>
+	      		<li {% if nav_tab_location == "blog" %}class="active"{% endif %}><a href="/blog">Blog</a></li>
+	      		<li {% if nav_tab_location == "contact" %}class="active"{% endif %}><a href="/p/contact">Contact</a></li>
+			      {% if is_admin %}
+	      		<li {% if nav_tab_location == "admin" %}class="active"{% endif %}><a href="/admin">Admin</a></li>
+			      {% endif %}
+	      	</ul>
+	      </div>
+	    </div>
+    </header>

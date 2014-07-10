@@ -1,0 +1,66 @@
+<div class="row">
+	<div class="col-md-10">
+		<p class="lead">Swapps</p>
+	</div>
+	<div class="col-md-2">
+		<button class="pull-right btn btn-primary" data-toggle="modal" data-target="#newSwapp">New Swapp</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="newSwapp" tabindex="-1" role="dialog" aria-labelledby="newSwappLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="newSwappLabel">New Swapp</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<form>
+		      		<div class="row">
+		      			<div class="col-md-6">
+				      		<div class="form-group">
+				      			<input type="text" class="form-control" name="title" placeholder="Title">
+				      		</div>
+				      		<div class="form-group">
+				      			<label>Thumbnail</label>
+				      			<input type="file" class="form-control">
+				      		</div>
+				      		<div class="form-group">
+				      			<div class="row">
+				      				<div class="col-md-8">
+						      			<input class="form-control" type="text" placeholder="Force geo">
+						      		</div>
+						      		<div class="col-md-4">
+						      			<button class="btn btn-primary">Find geo</button>
+						      		</div>
+						      	</div>
+				      			<input id="geo" type="hidden" value="">
+				      		</div>
+				      		<div class="form-group">
+								    <div class="input-group">
+								      <div class="input-group-addon">£ GBP</div>
+								      <input class="form-control" type="text" placeholder="Estimated value">
+								    </div>
+				      		</div>
+				      	</div>
+				      	<div class="col-md-6">
+				      		<div class="map-placeholder"></div>
+				      	</div>
+				      </div>
+		      	</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Add</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<p>Content</p>
+	</div>
+</div>
