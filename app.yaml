@@ -1,4 +1,4 @@
-application: swapp-app
+application: swapp-site
 version: 1
 runtime: python27
 api_version: 1
@@ -16,7 +16,7 @@ libraries:
   version: "latest" # or 2.3: see https://developers.google.com/appengine/docs/python/tools/libraries27
 
 handlers:
-- url: /(favicon\.ico|fb-channel\.html)
+- url: /(favicon\.ico|fb-channel\.html|crossdomain\.xml|robots\.txt)
   static_files: static/\1
   upload: static/.*
 

@@ -15,18 +15,18 @@ DEBUG = os.environ.get('SERVER_SOFTWARE', '').startswith('Dev')
 
 routes = [
     #Home
-    Route('/robots.txt', 'handlers.Admin.Handler:robots'),
-
     Route('/', 'handlers.Home.Handler:root'),
 
     #Static pages
-    Route('/myfiles', 'handlers.StaticPages.Handler:myfiles'),
-    Route('/files/<file_id>', 'handlers.StaticPages.Handler:filePage'),
-    Route('/t/<page_name>', 'handlers.StaticPages.Handler:root'),
+    Route('/p/<page_name>', 'handlers.StaticPages.Handler:root'),
 
     #Error pages
     Route('/<error_id:\d{3}>', 'handlers.ErrorPages.Handler:root'),
     Route(r'/logout', handler='handlers.GlobalHandlers.Handler:logout'),    
+
+    # App requests
+    Route(r'/app/request/<request_name>', handler='handlers.App.Handler:app_request'),    
+    Route(r'/app/save/<request_name>', handler='handlers.App.Handler:app_save_data'),    
 
     #FileServe
     Route(r'/serve/<key>.<extension>', handler='handlers.ServeHandlerWithExtension.Handler'),
@@ -38,9 +38,9 @@ routes = [
     Route('/admin/<page_name>', 'handlers.Admin.Handler:page'),
 
     #ACTIONS
-    Route('/actions/upload-file', 'handlers.Upload.Handler:add_file'),
-    Route('/actions/replace-file', 'handlers.Upload.Handler:replace_file'),
-    Route('/actions/change-privacy', 'handlers.Upload.Handler:change_privacy'),
+    # Route('/actions/upload-file', 'handlers.Upload.Handler:add_file'),
+    # Route('/actions/replace-file', 'handlers.Upload.Handler:replace_file'),
+    # Route('/actions/change-privacy', 'handlers.Upload.Handler:change_privacy'),
 
     #Sections
     #Route('/<section>', 'handlers.SectionHomePages.Handler:root'),

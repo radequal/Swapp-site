@@ -39,10 +39,3 @@ class Handler(Jinja2Handler):
             'page_name': page_name,
             'is_admin': is_admin,
         })
-
-
-    def robots(self):
-        self.response.write("""\n
-User-agent: *\n
-"""
-        )
